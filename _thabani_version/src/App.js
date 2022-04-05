@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component }  from 'react';
 
 import { makeStyles } from "@material-ui/core";
 import Homepage from "./Pages/HomePage";
@@ -18,15 +18,12 @@ const useStyles = makeStyles(() => ({
 function App() {
   const classes = useStyles();
 
-  return (
+  return ( 
     <BrowserRouter>
       <div className={classes.App}>
         <Header />
-        <Routes>
-          <Route path="/" element={<Homepage />} exact />
-          <Route path="/coins/:id" element={<CoinPage />} />
-        </Routes>      
-        
+        <Routes><Route path="/" element={<Homepage />} exact /></Routes>
+        <Routes><Route path="/coins/:id" element={<CoinPage />} exact /></Routes>
       </div>
     </BrowserRouter>
   );
